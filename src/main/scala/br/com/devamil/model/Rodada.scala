@@ -4,7 +4,8 @@ import scala.util.matching.Regex
 import scala.util.parsing.combinator.RegexParsers
 
 case class Rodada(mao: List[Carta], monte: List[Carta]) {
-  require(mao.size == 5 && monte.size == 5)
+  require(mao != null && mao.size == 5)
+  require(monte != null && monte.size == 5)
 }
 
 object Rodada extends RegexParsers {

@@ -15,4 +15,23 @@ class RodadaTest extends Specification {
       rodada.monte must have size(5)
     }
   }
+  
+  "Tentar criar uma Rotada invalida" should {
+    "lancar IllegalArgumentException para cartas invalidas" in {
+      (Rodada("69 JH QC QD QS QH KH AH 2S 6S")) must throwA(new IllegalArgumentException("rodada.invalida"))
+    }
+
+    "lancar IllegalArgumentException para numero cartas invalidas" in {
+      (Rodada("QS QH KH AH 2S 6S")) must throwA(new IllegalArgumentException("rodada.invalida"))
+      (Rodada("TH JH QC QD QS QH KH AH 2S 6S 2H")) must throwA(new IllegalArgumentException("rodada.invalida"))
+    }
+    
+    "lancar IllegalArgumentException para valores nulos" in {
+      (new Rodada(null, null)) must throwAn[IllegalArgumentException]
+    }
+    
+    "lancar IllegalArgumentException para valores nulos" in {
+      (new Rodada(List(Carta("QS")), List(Carta("QD")))) must throwAn[IllegalArgumentException]
+    }
+  }
 }
