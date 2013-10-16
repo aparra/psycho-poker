@@ -1,3 +1,8 @@
+.cache
 .classpath
+.settings
 .project
-.settings/
+target
+/bin
+/project/target
+/project/project
