@@ -11,7 +11,7 @@ case class Rodada(mao: List[Carta], monte: List[Carta]) {
 object Rodada extends RegexParsers {
 
   def carta: Parser[Carta] = """([A2-9TJQK][CDSH])""".r ^^ { Carta(_) }
-  def rodada = repN(5, carta) ~ repN(5, carta) ^^ { case mao ~ carta => new Rodada(mao, carta) }
+  def rodada = repN(5, carta) ~ repN(5, carta) ^^ { case mao ~ monte => new Rodada(mao, monte) }
 
   def apply(entrada: String): Rodada = parseAll(rodada, entrada) match {
     case Success(resultado, _) => resultado

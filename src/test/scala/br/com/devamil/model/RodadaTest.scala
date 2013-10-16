@@ -16,7 +16,7 @@ class RodadaTest extends Specification {
     }
   }
   
-  "Tentar criar uma Rotada invalida" should {
+  "Tentar criar uma Rodada invalida usando o parser" should {
     "lancar IllegalArgumentException para cartas invalidas" in {
       (Rodada("69 JH QC QD QS QH KH AH 2S 6S")) must throwA(new IllegalArgumentException("rodada.invalida"))
     }
@@ -25,12 +25,14 @@ class RodadaTest extends Specification {
       (Rodada("QS QH KH AH 2S 6S")) must throwA(new IllegalArgumentException("rodada.invalida"))
       (Rodada("TH JH QC QD QS QH KH AH 2S 6S 2H")) must throwA(new IllegalArgumentException("rodada.invalida"))
     }
-    
+  }
+  
+  "Tentar criar uma Rodada invalida 'na mao'" should {
     "lancar IllegalArgumentException para valores nulos" in {
       (new Rodada(null, null)) must throwAn[IllegalArgumentException]
     }
     
-    "lancar IllegalArgumentException para valores nulos" in {
+    "lancar IllegalArgumentException para numero de cartas" in {
       (new Rodada(List(Carta("QS")), List(Carta("QD")))) must throwAn[IllegalArgumentException]
     }
   }
