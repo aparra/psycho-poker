@@ -3,7 +3,7 @@ package br.com.devamil.jogada.avaliador
 import org.specs2.mutable._
 import br.com.devamil.jogada.Cartas
 
-class SequenciaTest extends Specification {
+class SequenciaNaipeTest extends Specification {
 
   {val cartas = Cartas("2C 9C 8C 3C 7C"); cartas.mkString(" ") should {
     "formam UMA sequencia de naipe" in {
