@@ -20,5 +20,11 @@ class StraightTest extends Specification {
     "nao forma a jogada straight" in {
       Straight.avalia(cartas) must beFalse
     }
-  }}  
+  }}
+  
+  {val cartas = Cartas("2C 3C 4C 5C 6C"); cartas.mkString(" ") should {
+    "nao forma a jogada straight" in {
+      Straight.avalia(cartas) must beFalse
+    }
+  }}
 }

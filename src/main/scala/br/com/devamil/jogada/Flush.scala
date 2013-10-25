@@ -5,7 +5,8 @@ import br.com.devamil.jogada.avaliador.Sequencia
 
 object Flush {
 
-  def avalia(cartas: List[Carta]): Boolean = Sequencia.naipe.avalia(cartas)
+  def avalia(cartas: List[Carta]): Boolean = 
+    Sequencia.naipe.avalia(cartas) && !Sequencia.valor.avalia(cartas) 
   
   def nome = "flush"
 }

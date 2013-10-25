@@ -21,4 +21,11 @@ class FlushTestTest extends Specification {
       Flush.avalia(cartas) must beFalse
     }
   }}
+  
+  {val cartas = Cartas("2C 3C 4C 5C 6C"); cartas.mkString(" ") should {
+    "nao forma a jogada flush" in {
+      Flush.avalia(cartas) must beFalse
+    }
+  }}
+
 }
