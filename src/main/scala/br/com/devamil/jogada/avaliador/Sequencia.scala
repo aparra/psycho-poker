@@ -10,8 +10,7 @@ object Sequencia {
   }
 
   object valor {
-    def avalia(cartas: List[Carta]): Boolean = {
-      cartas.map(_.valor.ordinal()).reduce(_ - _) == 1
-    }
+    def avalia(cartas: List[Carta]): Boolean =
+      !cartas.map(_.valor.ordinal()).sortWith(_ < _).sliding(2).map(x => x(1) - x(0)).exists(_ != 1)
   }
 }
