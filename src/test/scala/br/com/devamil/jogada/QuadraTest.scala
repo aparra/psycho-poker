@@ -17,7 +17,7 @@ class QuadraTest extends Specification {
   }}
   
   {val cartas = Cartas("2C 2H 8C 2D 7C"); cartas.mkString(" ") should {
-    "nao forma a jogada um par" in {
+    "nao forma a jogada quadra" in {
       Quadra.avalia(cartas) must beFalse
     }
   }}
