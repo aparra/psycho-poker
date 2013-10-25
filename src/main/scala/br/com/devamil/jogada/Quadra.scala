@@ -5,10 +5,7 @@ import br.com.devamil.jogada.avaliador.Agrupamento
 
 object Quadra {
 
-  def avalia(cartas: List[Carta]): Boolean = {
-    val agrupamento = Agrupamento.avalia(cartas)
-    agrupamento.quadra
-  } 
+  def avalia(cartas: List[Carta]): Boolean = Agrupamento.avalia(cartas).quadra
   
   def nome = "four-of-a-kind"
 }

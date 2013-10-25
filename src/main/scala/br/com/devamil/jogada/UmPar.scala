@@ -7,7 +7,7 @@ object UmPar {
 
   def avalia(cartas: List[Carta]): Boolean = {
     val agrupamento = Agrupamento.avalia(cartas)
-    agrupamento.umPar && !agrupamento.doisPares && !agrupamento.trinca
+    agrupamento.umPar && !agrupamento.trinca
   } 
   
   def nome = "one-pair"
