@@ -9,4 +9,5 @@ object Flush extends Jogada {
     Sequencia.naipe.avalia(cartas) && !Sequencia.valor.avalia(cartas)
 
   def nome = "flush"
+  def ranking = 6  
 }

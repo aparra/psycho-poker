@@ -8,6 +8,10 @@ class FlushTestTest extends Specification {
     "ter o nome 'flush'" in {
       Flush.nome must be equalTo "flush"
     }
+
+    "ter o ranking 6" in {
+      Flush.ranking must be equalTo 6
+    }
   }
   
   {val cartas = Cartas("2C 9C 3C 8C TC"); cartas.mkString(" ") should {

@@ -11,4 +11,5 @@ object Trinca extends Jogada {
   } 
   
   def nome = "three-of-a-kind"
+  def ranking = 4
 }

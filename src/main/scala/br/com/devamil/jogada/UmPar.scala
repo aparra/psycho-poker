@@ -11,4 +11,5 @@ object UmPar extends Jogada {
   } 
   
   def nome = "one-pair"
+  def ranking = 2    
 }

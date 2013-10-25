@@ -8,6 +8,10 @@ class TrincaTest extends Specification {
     "ter o nome 'three-of-a-kind'" in {
       Trinca.nome must be equalTo "three-of-a-kind"
     }
+    
+    "ter o ranking 4" in {
+      Trinca.ranking must be equalTo 4
+    }
   }
   
   {val cartas = Cartas("2C 9C 2H 2D 7C"); cartas.mkString(" ") should {

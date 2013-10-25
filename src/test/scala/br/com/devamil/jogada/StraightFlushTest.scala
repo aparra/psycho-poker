@@ -8,6 +8,10 @@ class StraightFlushTest extends Specification {
     "ter o nome 'straight-flush'" in {
       StraightFlush.nome must be equalTo "straight-flush"
     }
+    
+    "ter o ranking 9" in {
+      StraightFlush.ranking must be equalTo 9
+    }
   }
   
   {val cartas = Cartas("2C 3C 4C 5C 6C"); cartas.mkString(" ") should {

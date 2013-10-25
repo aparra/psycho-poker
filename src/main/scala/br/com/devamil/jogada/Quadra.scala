@@ -8,4 +8,5 @@ object Quadra extends Jogada {
   def avalia(cartas: List[Carta]): Boolean = Agrupamento.avalia(cartas).quadra
   
   def nome = "four-of-a-kind"
+  def ranking = 8
 }

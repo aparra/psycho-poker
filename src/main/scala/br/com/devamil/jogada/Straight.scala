@@ -9,4 +9,5 @@ object Straight extends Jogada {
     Sequencia.valor.avalia(cartas) && !Sequencia.naipe.avalia(cartas)
   
   def nome = "straight"
+  def ranking = 5  
 }

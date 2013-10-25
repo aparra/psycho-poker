@@ -11,4 +11,5 @@ object FullHouse extends Jogada {
   } 
   
   def nome = "full-house"
+  def ranking = 7  
 }

@@ -8,6 +8,10 @@ class StraightTest extends Specification {
     "ter o nome 'straight'" in {
       Straight.nome must be equalTo "straight"
     }
+    
+    "ter o ranking 5" in {
+      Straight.ranking must be equalTo 5
+    }
   }
   
   {val cartas = Cartas("2C 3C 4H 5D 6C"); cartas.mkString(" ") should {

@@ -9,4 +9,5 @@ object StraightFlush extends Jogada {
     Sequencia.naipe.avalia(cartas) && Sequencia.valor.avalia(cartas)
   
   def nome = "straight-flush"
+  def ranking = 9  
 }

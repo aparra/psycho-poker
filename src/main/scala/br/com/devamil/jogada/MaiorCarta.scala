@@ -8,4 +8,5 @@ object MaiorCarta extends Jogada {
   def avalia(cartas: List[Carta]): Boolean = true
   
   def nome = "highest-card"
+  def ranking = 1  
 }

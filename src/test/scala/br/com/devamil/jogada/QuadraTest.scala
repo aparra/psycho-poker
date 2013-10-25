@@ -8,6 +8,10 @@ class QuadraTest extends Specification {
     "ter o nome 'four-of-a-kind'" in {
       Quadra.nome must be equalTo "four-of-a-kind"
     }
+
+    "ter o ranking 8" in {
+      Quadra.ranking must be equalTo 8
+    }
   }
   
   {val cartas = Cartas("2C 2H 2S 2D 7C"); cartas.mkString(" ") should {

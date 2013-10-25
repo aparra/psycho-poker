@@ -8,6 +8,10 @@ class DoisParesTest extends Specification {
     "ter o nome 'two-pairs'" in {
       DoisPares.nome must be equalTo "two-pairs"
     }
+    
+    "ter o ranking 3" in {
+      DoisPares.ranking must be equalTo 3
+    }
   }
   
   {val cartas = Cartas("2C 9C 2H 7D 9D"); cartas.mkString(" ") should {
