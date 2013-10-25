@@ -5,57 +5,53 @@ import br.com.devamil.jogada.Cartas
 
 class AgrupamentoTest extends Specification {
 
-  {val cartas = Cartas("2C 9C 8C 2D 7C"); cartas.mkString(" ") should {
-    "formam UM par" in {
+  "Um avaliador de agrupamento" should {
+    "reconhecer UM par" in {
+      val cartas = Cartas("2C 9C 8C 2D 7C")
       Agrupamento.avalia(cartas).umPar must beTrue
       Agrupamento.avalia(cartas).doisPares must beFalse
       Agrupamento.avalia(cartas).trinca must beFalse
       Agrupamento.avalia(cartas).quadra must beFalse
     }
-  }}
-
-  {val cartas = Cartas("2C 9C 8C 2D 9D"); cartas.mkString(" ") should {
-    "formam DOIS pares" in {
+    
+    "reconhecer DOIS pares" in {
+      val cartas = Cartas("2C 9C 8C 2D 9D")
       Agrupamento.avalia(cartas).umPar must beFalse
       Agrupamento.avalia(cartas).doisPares must beTrue
       Agrupamento.avalia(cartas).trinca must beFalse
       Agrupamento.avalia(cartas).quadra must beFalse
     }
-  }}
 
-  {val cartas = Cartas("2C 9C 8C 9S 9D"); cartas.mkString(" ") should {
-    "formam UMA trinca" in {
+    "reconhecer UMA trinca" in {
+      val cartas = Cartas("2C 9C 8C 9S 9D")
       Agrupamento.avalia(cartas).umPar must beFalse
       Agrupamento.avalia(cartas).doisPares must beFalse
       Agrupamento.avalia(cartas).trinca must beTrue
       Agrupamento.avalia(cartas).quadra must beFalse
     }
-  }}
 
-  {val cartas = Cartas("9H 9C 8C 9S 9D"); cartas.mkString(" ") should {
-    "formam UMA quadra" in {
+    "reconhecer UMA quadra" in {
+      val cartas = Cartas("9H 9C 8C 9S 9D")
       Agrupamento.avalia(cartas).umPar must beFalse
       Agrupamento.avalia(cartas).doisPares must beFalse
       Agrupamento.avalia(cartas).trinca must beFalse
       Agrupamento.avalia(cartas).quadra must beTrue
     }
-  }}
 
-  {val cartas = Cartas("2C 9C 2H 9S 9D"); cartas.mkString(" ") should {
-    "formam UM par e UMA trinca" in {
+    "reconhecer UM par e UMA trinca" in {
+      val cartas = Cartas("2C 9C 2H 9S 9D")
       Agrupamento.avalia(cartas).umPar must beTrue
       Agrupamento.avalia(cartas).doisPares must beFalse
       Agrupamento.avalia(cartas).trinca must beTrue
       Agrupamento.avalia(cartas).quadra must beFalse
     }
-  }}
   
-  {val cartas = Cartas("2C 3C 6H 7S 9D"); cartas.mkString(" ") should {
-    "nao formam nenhum grupo" in {
+    "reconhecer quando nao existe agrupamento" in {
+      val cartas = Cartas("2C 3C 6H 7S 9D")
       Agrupamento.avalia(cartas).umPar must beFalse
       Agrupamento.avalia(cartas).doisPares must beFalse
       Agrupamento.avalia(cartas).trinca must beFalse
       Agrupamento.avalia(cartas).quadra must beFalse
     }
-  }}
+  }
 }
