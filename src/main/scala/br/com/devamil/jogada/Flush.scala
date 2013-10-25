@@ -3,9 +3,9 @@ package br.com.devamil.jogada
 import br.com.devamil.model.Carta
 import br.com.devamil.jogada.avaliador.Sequencia
 
-object Straight {
+object Flush {
 
-  def avalia(cartas: List[Carta]): Boolean = Sequencia.valor.avalia(cartas)
+  def avalia(cartas: List[Carta]): Boolean = Sequencia.naipe.avalia(cartas)
   
-  def nome = "straight"
+  def nome = "flush"
 }
