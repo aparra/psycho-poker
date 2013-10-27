@@ -14,7 +14,7 @@ class StraightFlushTest extends Specification {
     }
   }
   
-  {val cartas = Cartas("2C 3C 4C 5C 6C"); cartas.mkString(" ") should {
+  {val cartas = Cartas("TH JH QH KH AH"); cartas.mkString(" ") should {
     "formar a jogada straight flush" in {
       StraightFlush.avalia(cartas) must beTrue
     }
