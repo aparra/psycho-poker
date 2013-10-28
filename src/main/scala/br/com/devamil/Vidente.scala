@@ -6,17 +6,17 @@ import br.com.devamil.jogada.MaiorCarta
 
 object Vidente {
 
-  def melhorJogada(rodada: Rodada): String = {
-    var vencedora: Jogada = MaiorCarta
+  def avalia(rodada: Rodada): String = {
+    var maiorJogada: Jogada = MaiorCarta
     
     for (trocas <- split(rodada.monte)) {
       for (combinacao <- combina(rodada.mao, trocas)) {
         var jogada = analisador.avalia(combinacao)
-        if (jogada.ranking > vencedora.ranking) vencedora = jogada
+        if (jogada > maiorJogada) maiorJogada = jogada
       }
     }  
     
-    vencedora.nome
+    s"$rodada Melhor Jogo: ${maiorJogada.nome}"
   }
 
   private def split(cartas: List[Carta]) =

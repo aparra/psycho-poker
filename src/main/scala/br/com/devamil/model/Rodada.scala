@@ -1,11 +1,12 @@
 package br.com.devamil.model
 
-import scala.util.matching.Regex
 import scala.util.parsing.combinator.RegexParsers
 
 case class Rodada(mao: List[Carta], monte: List[Carta]) {
   require(mao != null && mao.size == 5)
   require(monte != null && monte.size == 5)
+ 
+  override def toString = s"Mao: ${mao.mkString(" ")} Monte: ${monte.mkString(" ")}"
 }
 
 object Rodada extends RegexParsers {

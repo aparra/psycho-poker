@@ -7,11 +7,10 @@ trait Jogada {
   def avalia(cartas: List[Carta]): Boolean
   def nome: String
   def ranking: Int
+  def > (jogada: Jogada): Boolean = this.ranking > jogada.ranking
 }
 
 object Jogadas {
-
-  private val possibildiades = List(StraightFlush, Quadra, FullHouse, Flush, Straight, Trinca, DoisPares, UmPar, MaiorCarta)
-
-  def avalia(cartas: List[Carta]): Jogada = possibildiades.find(_.avalia(cartas)).get
+  private val possibilidades = List(StraightFlush, Quadra, FullHouse, Flush, Straight, Trinca, DoisPares, UmPar, MaiorCarta)
+  def avalia(cartas: List[Carta]): Jogada = possibilidades.find(jogada => jogada.avalia(cartas)).get
 }
