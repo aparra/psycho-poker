@@ -41,5 +41,9 @@ class VidenteTest extends Specification {
     "prever maior carta" in {
       Vidente.avalia(Rodada("3D 5S 2H QD TD 6S KH 9H AD QH")) must be equalTo "Mao: 3D 5S 2H QD TD Monte: 6S KH 9H AD QH Melhor Jogo: highest-card"
     }
+    
+    "prever melhor jogo que esta na mao" in {
+      Vidente.avalia(Rodada("3D 3S 2H 2D 2S 6S KH 9H AD QH")) must be equalTo "Mao: 3D 3S 2H 2D 2S Monte: 6S KH 9H AD QH Melhor Jogo: full-house"
+    }
   }
 }

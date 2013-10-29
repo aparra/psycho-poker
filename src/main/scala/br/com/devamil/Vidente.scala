@@ -2,13 +2,12 @@ package br.com.devamil
 
 import br.com.devamil.model.{ Carta, Rodada }
 import br.com.devamil.jogada.avaliador.{ Jogada, Jogadas => analisador }
-import br.com.devamil.jogada.MaiorCarta
 
 object Vidente {
 
   def avalia(rodada: Rodada): String = {
-    var maiorJogada: Jogada = MaiorCarta
-    
+    var maiorJogada: Jogada = analisador.avalia(rodada.mao)
+
     for (trocas <- split(rodada.monte)) {
       for (combinacao <- combina(rodada.mao, trocas)) {
         var jogada = analisador.avalia(combinacao)
